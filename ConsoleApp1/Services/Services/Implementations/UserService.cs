@@ -18,6 +18,11 @@ public class UserService : IUserService
         if (status is null)
             throw new NotFoundException();
 
-        return status;
+        //StatusResponseDto statusResponseDto = new StatusResponseDto();
+        //statusResponseDto.Title= status.Title;
+        //statusResponseDto.Content= status.Content;
+        //return statusResponseDto;
+        return Mappers.Map.MapMethod<Status, StatusResponseDto>(status);
+        
     }
 }
